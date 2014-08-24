@@ -15,6 +15,9 @@ rm(filename1, filename2)
 #     in Los Angeles County, California (fips == "06037").
 #    Which city has seen greater changes over time in motor vehicle emissions?
 #---------------------------------------------------------------------------------------------------
+library(ggplot2)
+library(plyr)
+
 motveh1 <- SCC[grep("(.*)[Vv]ehicle(.*)", SCC$EI.Sector,perl=TRUE),1]
 N1 <- subset(NEI, (fips == "24510" | fips == "06037") & SCC %in% motveh1)
 

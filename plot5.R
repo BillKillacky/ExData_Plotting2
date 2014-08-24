@@ -13,6 +13,9 @@ rm(filename1, filename2)
 # 5. How have emissions from motor vehicle sources changed 
 #    from 1999-2008 in Baltimore City?
 #---------------------------------------------------------------------------------------------------
+library(ggplot2)
+library(plyr)
+
 motveh1 <- SCC[grep("(.*)[Vv]ehicle(.*)", SCC$EI.Sector,perl=TRUE),1]
 N1 <- subset(NEI, fips == "24510" & SCC %in% motveh1)
 
